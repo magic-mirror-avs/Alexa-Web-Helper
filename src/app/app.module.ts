@@ -11,7 +11,6 @@ import { AmazonService } from './amazon.service';
 import { AuthResponseComponent } from './auth-response/auth-response.component';
 import { StartComponent } from './start/start.component';
 
-
 @NgModule({
     declarations: [
         AppComponent,

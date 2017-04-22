@@ -9,8 +9,6 @@ import { Observable } from 'rxjs/Rx';
     styleUrls: ['./auth-response.component.scss']
 })
 export class AuthResponseComponent implements OnInit {
-    public token: string;
-    public refreshToken: string;
     public config: any;
     private code: string;
 
@@ -21,12 +19,13 @@ export class AuthResponseComponent implements OnInit {
     public ngOnInit(): void {
         this.amazonService.getTokens(this.code).subscribe((res) => {
             console.log(res);
-            this.token = res.access_token;
-            this.refreshToken = res.refresh_token;
+            const token = res.access_token;
+            const refreshToken = res.refresh_token;
+
             this.config = {
                 module: "MMM-awesome-alexa",
                 config: {
-                    refreshToken: this.refreshToken
+                    refreshToken: refreshToken
                 }
             }
         });
