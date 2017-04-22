@@ -1,6 +1,6 @@
 import { browser, element, by } from 'protractor';
 
-export class AvsOauthClientPage {
+export class AlexaWebHelperPage {
   navigateTo() {
     return browser.get('/');
   }

@@ -1,10 +1,10 @@
-import { AvsOauthClientPage } from './app.po';
+import { AlexaWebHelperPage } from './app.po';
 
-describe('avs-oauth-client App', function() {
-  let page: AvsOauthClientPage;
+describe('alexa-web-helper App', () => {
+  let page: AlexaWebHelperPage;
 
   beforeEach(() => {
-    page = new AvsOauthClientPage();
+    page = new AlexaWebHelperPage();
   });
 
   it('should display message saying app works', () => {
