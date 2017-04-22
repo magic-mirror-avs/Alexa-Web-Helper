@@ -11,6 +11,7 @@ import { Observable } from 'rxjs/Rx';
 export class AuthResponseComponent implements OnInit {
     public token: string;
     public refreshToken: string;
+    public config: any;
     private code: string;
 
     constructor(private amazonService: AmazonService, private activatedRoute: ActivatedRoute, private route: Router) {
@@ -22,6 +23,12 @@ export class AuthResponseComponent implements OnInit {
             console.log(res);
             this.token = res.access_token;
             this.refreshToken = res.refresh_token;
+            this.config = {
+                module: "MMM-awesome-alexa",
+                config: {
+                    refreshToken: this.refreshToken
+                }
+            }
         });
     }
 }

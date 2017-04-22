@@ -9,22 +9,24 @@ import { AppComponent } from './app.component';
 import { AmazonService } from './amazon.service';
 
 import { AuthResponseComponent } from './auth-response/auth-response.component';
+import { StartComponent } from './start/start.component';
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    AuthResponseComponent
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    HttpModule,
-    AppRoutingModule
-  ],
-  providers: [
-    AmazonService
-  ],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        AuthResponseComponent,
+        StartComponent
+    ],
+    imports: [
+        BrowserModule,
+        FormsModule,
+        HttpModule,
+        AppRoutingModule
+    ],
+    providers: [
+        AmazonService
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
