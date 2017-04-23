@@ -1,3 +1,32 @@
 <p class="lead">
-    <a class="btn btn-primary btn-lg" href="#" role="button" (click)="login()">Click here to start</a>
+    Please visit <a href="https://developer.amazon.com/home.html">https://developer.amazon.com/home.html</a> and create an
+    Alexa Voice Service to be used in the form below.
 </p>
+
+<p class="lead">
+    It is optional though, but highly recommended. Otherwise you will be using my Alexa in America 😉
+</p>
+
+<hr>
+
+<form>
+    <div class="form-group">
+        <label for="clientId">Client ID <small>(optional)</small></label>
+        <input type="text" class="form-control" id="clientId" aria-describedby="clientIdHelp" placeholder="Enter AVS Client ID">
+        <small id="clientIdHelp" class="form-text text-muted">This is not stored and is only sent to Amazon's secure servers</small>
+    </div>
+
+    <div class="form-group">
+        <label for="clientSecret">Client Secret <small>(optional)</small></label>
+        <input type="text" class="form-control" id="clientSecret" aria-describedby="clientSecretHelp" placeholder="Enter AVS Client Secret">
+        <small id="clientSecretHelp" class="form-text text-muted">This is not stored and is only sent to Amazon's secure servers</small>
+    </div>
+
+    <div class="form-group">
+        <label for="deviceId">Device Id <small>(optional)</small></label>
+        <input type="text" class="form-control" id="deviceId" aria-describedby="deviceIdHelp" placeholder="Enter AVS Device Id">
+        <small id="deviceIdHelp" class="form-text text-muted">This is not stored and is only sent to Amazon's secure servers</small>
+    </div>
+
+    <button class="btn btn-primary btn-lg" role="button" type="submit" (click)="login()">Click here to start</button>
+</form>
