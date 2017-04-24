@@ -1,3 +1,16 @@
+<div class="form-group">
+    <label for="exampleSelect1">Wake Word</label>
+    <select class="form-control" id="wakeWord" [(ngModel)]="config.config.wakeWord" aria-describedby="wakeWordHelp">
+      <option selected>Alexa</option>
+      <option>Jarvis</option>
+      <option>Smart Mirror</option>
+      <option>Computer</option>
+    </select>
+    <small id="wakeWordHelp" class="form-text text-muted">This is the word you say when you want <code>Alexa</code> to start.</small>
+</div>
+
+<hr>
+
 <h2>Your Config</h2>
 
 <p class="lead">
@@ -7,5 +20,6 @@
 <pre>{{config | json}}</pre>
 
 <p class="lead">
-    As stated before, this tool is uses my Alexa Voice service. In future, please create your own by visiting <a href="https://developer.amazon.com/home.html">https://developer.amazon.com/home.html</a>. Then run this tool again.
+    As stated before, this tool is uses my Alexa Voice service. In future, please create your own by visiting <a href="https://developer.amazon.com/home.html">https://developer.amazon.com/home.html</a>.
+    Then run this tool again.
 </p>

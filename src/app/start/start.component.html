@@ -18,6 +18,9 @@
     please set the <code>Allowed Origins</code> and <code>Allowed Return URLs</code> to the following for this tool to work:
 </p>
 
+<p><code>Allowed Origins:</code> https://magic-mirror-avs.github.io/Alexa-Web-Helper/</p>
+<p><code>Allowed Return URLs:</code> https://magic-mirror-avs.github.io/Alexa-Web-Helper/authresponse</p>
+
 <form (ngSubmit)="submitForm(formGroup.value)" >
     <div class="form-group" [ngClass]="{'has-danger': !formGroup.get('clientId').valid && formGroup.get('clientId').dirty}">
         <label for="clientId">Client ID</label>
