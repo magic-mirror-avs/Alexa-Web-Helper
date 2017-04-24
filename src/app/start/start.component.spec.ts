@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpModule } from '@angular/http';
 
 import { StartComponent } from './start.component';
+import { AmazonService } from '../amazon.service';
 
 describe('StartComponent', () => {
     let component: StartComponent;
@@ -8,9 +10,16 @@ describe('StartComponent', () => {
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            declarations: [StartComponent]
-        })
-            .compileComponents();
+            declarations: [
+                StartComponent
+            ],
+            imports: [
+                HttpModule
+            ],
+            providers: [
+                AmazonService
+            ]
+        }).compileComponents();
     }));
 
     beforeEach(() => {
