@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 import 'rxjs/Rx';
+import { environment } from '../environments/environment';
 
 const clientId = 'amzn1.application-oa2-client.81574bebfb25437595d7376f44b54f8e';
 const secret = '87d49f998b3a6507b8e6a08760cda274e1d44a22a2bebade9433b1e7445d66a5';
@@ -15,7 +16,7 @@ const scopeData = {
     }
 };
 const responseType = 'code';
-const redirectUri = 'http://localhost:4200/authresponse';
+const redirectUri = `${environment.url}/authresponse`;
 
 @Injectable()
 export class AmazonService {
