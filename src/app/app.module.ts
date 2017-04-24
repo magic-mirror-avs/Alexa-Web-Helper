@@ -10,18 +10,18 @@ import { AmazonService } from './amazon.service';
 
 import { AuthResponseComponent } from './auth-response/auth-response.component';
 import { StartComponent } from './start/start.component';
-
+import { StartModule } from './start/start.module';
 @NgModule({
     declarations: [
         AppComponent,
-        AuthResponseComponent,
-        StartComponent
+        AuthResponseComponent
     ],
     imports: [
         BrowserModule,
         FormsModule,
         HttpModule,
-        AppRoutingModule
+        AppRoutingModule,
+        StartModule
     ],
     providers: [
         AmazonService

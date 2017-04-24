@@ -18,24 +18,24 @@
     please set the <code>Allowed Origins</code> and <code>Allowed Return URLs</code> to the following for this tool to work:
 </p>
 
-<form>
+<form (ngSubmit)="submitForm(formGroup.value)" >
     <div class="form-group">
         <label for="clientId">Client ID <small>(optional)</small></label>
-        <input type="text" class="form-control" id="clientId" aria-describedby="clientIdHelp" placeholder="Enter AVS Client ID">
+        <input [formControl]="formGroup.get('clientId')" type="text" class="form-control" id="clientId" aria-describedby="clientIdHelp" placeholder="Enter AVS Client ID" autocomplete="off">
         <small id="clientIdHelp" class="form-text text-muted">This is not stored and is only sent to Amazon's secure servers</small>
     </div>
 
     <div class="form-group">
         <label for="clientSecret">Client Secret <small>(optional)</small></label>
-        <input type="text" class="form-control" id="clientSecret" aria-describedby="clientSecretHelp" placeholder="Enter AVS Client Secret">
+        <input [formControl]="formGroup.get('clientSecret')" type="text" class="form-control" id="clientSecret" aria-describedby="clientSecretHelp" placeholder="Enter AVS Client Secret" autocomplete="off">
         <small id="clientSecretHelp" class="form-text text-muted">This is not stored and is only sent to Amazon's secure servers</small>
     </div>
 
     <div class="form-group">
         <label for="deviceId">Device Id <small>(optional)</small></label>
-        <input type="text" class="form-control" id="deviceId" aria-describedby="deviceIdHelp" placeholder="Enter AVS Device Id">
+        <input [formControl]="formGroup.get('deviceId')" type="text" class="form-control" id="deviceId" aria-describedby="deviceIdHelp" placeholder="Enter AVS Device Id" autocomplete="off">
         <small id="deviceIdHelp" class="form-text text-muted">This is not stored and is only sent to Amazon's secure servers</small>
     </div>
 
-    <button class="btn btn-primary btn-lg" role="button" type="submit" (click)="login()">Click here to start</button>
+    <button class="btn btn-primary btn-lg" role="button" type="submit">Click here to start</button>
 </form>
