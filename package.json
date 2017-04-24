@@ -9,7 +9,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "deploy": "npm run build && ngh --no-silent"
+    "ngh": "ngh --no-silent --repo=https://GH_TOKEN@github.com//magic-mirror-avs/Alexa-Web-Helper.git",
+    "deploy": "npm run build && cp dist/index.html dist/404.html && npm run ngh"
   },
   "private": true,
   "dependencies": {
@@ -22,6 +23,7 @@
     "@angular/platform-browser-dynamic": "^4.0.0",
     "@angular/router": "^4.0.0",
     "bootstrap": "^4.0.0-alpha.6",
+    "copy": "^0.3.0",
     "core-js": "^2.4.1",
     "rxjs": "^5.1.0",
     "zone.js": "^0.8.4"
