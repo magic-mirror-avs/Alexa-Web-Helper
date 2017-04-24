@@ -27,7 +27,7 @@ export class AuthResponseComponent implements OnInit {
                 config: {
                     refreshToken: refreshToken
                 }
-            }
+            };
         });
     }
 }

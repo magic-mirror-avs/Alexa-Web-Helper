@@ -7,12 +7,4 @@ import { AmazonService } from './amazon.service';
     styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-    title = 'app works!';
-
-    constructor(private amazonService: AmazonService) {
-    }
-
-    public login(): void {
-        this.amazonService.login();
-    }
 }
