@@ -19,19 +19,19 @@
 </p>
 
 <form (ngSubmit)="submitForm(formGroup.value)" >
-    <div class="form-group">
+    <div class="form-group" [ngClass]="{'has-danger': !formGroup.get('clientId').valid && formGroup.get('clientId').dirty}">
         <label for="clientId">Client ID <small>(optional)</small></label>
         <input [formControl]="formGroup.get('clientId')" type="text" class="form-control" id="clientId" aria-describedby="clientIdHelp" placeholder="Enter AVS Client ID" autocomplete="off">
         <small id="clientIdHelp" class="form-text text-muted">This is not stored and is only sent to Amazon's secure servers</small>
     </div>
 
-    <div class="form-group">
+    <div class="form-group" [ngClass]="{'has-danger': !formGroup.get('clientSecret').valid && formGroup.get('clientSecret').dirty}">
         <label for="clientSecret">Client Secret <small>(optional)</small></label>
         <input [formControl]="formGroup.get('clientSecret')" type="text" class="form-control" id="clientSecret" aria-describedby="clientSecretHelp" placeholder="Enter AVS Client Secret" autocomplete="off">
         <small id="clientSecretHelp" class="form-text text-muted">This is not stored and is only sent to Amazon's secure servers</small>
     </div>
 
-    <div class="form-group">
+    <div class="form-group" [ngClass]="{'has-danger': !formGroup.get('deviceId').valid && formGroup.get('deviceId').dirty}">
         <label for="deviceId">Device Id <small>(optional)</small></label>
         <input [formControl]="formGroup.get('deviceId')" type="text" class="form-control" id="deviceId" aria-describedby="deviceIdHelp" placeholder="Enter AVS Device Id" autocomplete="off">
         <small id="deviceIdHelp" class="form-text text-muted">This is not stored and is only sent to Amazon's secure servers</small>
