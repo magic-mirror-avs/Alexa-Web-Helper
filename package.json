@@ -9,7 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "ngh": "ngh --no-silent --repo=https://GH_TOKEN@github.com//magic-mirror-avs/Alexa-Web-Helper.git",
+    "ngh": "ngh --no-silent --repo=https://GH_TOKEN@github.com/magic-mirror-avs/Alexa-Web-Helper.git",
     "deploy": "npm run build && cp dist/index.html dist/404.html && npm run ngh"
   },
   "private": true,
