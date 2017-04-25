@@ -19,7 +19,7 @@
 
 <pre>{{config | json}}</pre>
 
-<p class="lead">
-    As stated before, this tool is uses my Alexa Voice service. In future, please create your own by visiting <a href="https://developer.amazon.com/home.html">https://developer.amazon.com/home.html</a>.
+<p class="lead" *ngIf="config.config.clientId === undefined">
+    You have generated a config using my Alexa Voice service. In future, please create your own by visiting <a href="https://developer.amazon.com/home.html">https://developer.amazon.com/home.html</a>.
     Then run this tool again.
 </p>

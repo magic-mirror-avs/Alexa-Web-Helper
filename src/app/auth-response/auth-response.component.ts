@@ -6,8 +6,11 @@ import { Observable } from 'rxjs/Rx';
 interface Config {
     module: string;
     config: {
-        refreshToken: string;
+        refreshToken?: string;
         wakeWord: string;
+        clientId?: string;
+        clientSecret?: string;
+        deviceId?: string;
     };
 }
 
@@ -17,7 +20,7 @@ interface Config {
     styleUrls: ['./auth-response.component.scss']
 })
 export class AuthResponseComponent implements OnInit {
-    public config: any;
+    public config: Config;
     private code: string;
 
     constructor(private amazonService: AmazonService, private activatedRoute: ActivatedRoute, private route: Router) {
@@ -31,10 +34,14 @@ export class AuthResponseComponent implements OnInit {
     }
 
     public ngOnInit(): void {
-        this.amazonService.getTokens(this.code).subscribe((res) => {
+        this.config.config.clientId = localStorage.getItem('clientId');
+        this.config.config.clientSecret = localStorage.getItem('clientSecret');
+        this.config.config.deviceId = localStorage.getItem('deviceId');
+
+        this.amazonService.getTokens(this.code, this.config.config.clientId, this.config.config.clientSecret).subscribe((res) => {
             console.log(res);
             const token = res.access_token;
-            this.config.refreshToken = res.refresh_token;
+            this.config.config.refreshToken = res.refresh_token;
         });
     }
 }

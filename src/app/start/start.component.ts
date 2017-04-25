@@ -42,6 +42,10 @@ export class StartComponent implements OnInit {
     }
 
     public submitForm(value: AvsForm): void {
-        console.log(value);
+        localStorage.setItem('clientId', value.clientId);
+        localStorage.setItem('clientSecret', value.clientSecret);
+        localStorage.setItem('deviceId', value.deviceId);
+
+        this.amazonService.login(value.clientId, value.deviceId);
     }
 }
