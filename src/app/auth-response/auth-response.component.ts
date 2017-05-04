@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute, Params } from '@angular/router';
+import { Router } from '@angular/router';
 import { AmazonService } from '../amazon.service';
 import { Observable } from 'rxjs/Rx';
 
 interface Config {
     module: string;
+    position: string;
     config: {
         refreshToken?: string;
         wakeWord: string;
@@ -23,10 +24,11 @@ export class AuthResponseComponent implements OnInit {
     public config: Config;
     private code: string;
 
-    constructor(private amazonService: AmazonService, private activatedRoute: ActivatedRoute, private route: Router) {
+    constructor(private amazonService: AmazonService, private route: Router) {
         this.code = route.parseUrl(route.url).queryParams['code'];
         this.config = {
             module: 'MMM-awesome-alexa',
+            position: 'bottom_bar',
             config: {
                 wakeWord: 'Alexa'
             }
