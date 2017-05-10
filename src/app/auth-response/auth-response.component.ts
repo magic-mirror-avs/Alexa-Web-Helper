@@ -22,6 +22,7 @@ interface Config {
 })
 export class AuthResponseComponent implements OnInit {
     public config: Config;
+    public amazonResponse: AmazonTokenGrant;
     private code: string;
 
     constructor(private amazonService: AmazonService, private route: Router) {
@@ -44,6 +45,7 @@ export class AuthResponseComponent implements OnInit {
             console.log(res);
             const token = res.access_token;
             this.config.config.refreshToken = res.refresh_token;
+            this.amazonResponse = res;
         });
     }
 }
