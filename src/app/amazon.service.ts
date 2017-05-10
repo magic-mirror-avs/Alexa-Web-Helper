@@ -39,6 +39,8 @@ export class AmazonService {
 
         return this.http.post('https://api.amazon.com/auth/o2/token', postData, options).map(res => {
             return res.json() as AmazonTokenGrant;
+        }).catch((err) => {
+            return Observable.throw(err);
         });
     }
 }

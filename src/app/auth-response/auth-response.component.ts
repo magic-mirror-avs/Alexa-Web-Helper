@@ -41,11 +41,15 @@ export class AuthResponseComponent implements OnInit {
         this.config.config.clientSecret = localStorage.getItem('clientSecret');
         this.config.config.deviceId = localStorage.getItem('deviceId');
 
-        this.amazonService.getTokens(this.code, this.config.config.clientId, this.config.config.clientSecret).subscribe((res) => {
-            console.log(res);
-            const token = res.access_token;
-            this.config.config.refreshToken = res.refresh_token;
-            this.amazonResponse = res;
-        });
+        this.amazonService.getTokens(this.code, this.config.config.clientId, this.config.config.clientSecret)
+            .subscribe((res: AmazonTokenGrant) => {
+                console.log(res);
+                const token = res.access_token;
+                this.config.config.refreshToken = res.refresh_token;
+                this.amazonResponse = res;
+            }, (err) => {
+                console.log(err);
+                this.amazonResponse = err;
+            });
     }
 }
