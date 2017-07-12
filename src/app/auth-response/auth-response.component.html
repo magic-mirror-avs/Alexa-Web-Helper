@@ -2,8 +2,8 @@
     <label for="exampleSelect1">Wake Word</label>
     <select class="form-control" id="wakeWord" [(ngModel)]="config.config.wakeWord" aria-describedby="wakeWordHelp">
       <option selected>Alexa</option>
+      <option>Smart Mirror</option>
       <option disabled>Jarvis (coming soon)</option>
-      <option disabled>Smart Mirror (coming soon)</option>
       <option disabled>Computer (coming soon)</option>
     </select>
     <small id="wakeWordHelp" class="form-text text-muted">This is the word you say when you want <code>Alexa</code> to start.</small>
